@@ -1,4 +1,4 @@
-﻿
+
 Skills
 C++ C# Python React NodeJS SQL Assembly
 Hadoop Kafka Spark Azure MongoDB MySql  Dosbox
@@ -6,10 +6,8 @@ Flask Nodejs genAI spark Bootstrap TensorFlow Kafka Scikit-learn NumPy Pandas li
 
 
 Projects
-Search Engine using MapReduce
-Frequent Itemset Analysis on Amazon Metadata in Python
-Simple Chatbot using web scraping
+Search Engine
+Frequent Itemset Analysis
+Chatbot using web scraping
 Text Based Sentiment Analysis in Python
-Spotify using mapreduce Kafka Spark MongoDB
-Farewell Management System MySql NodeJs
-
+Spotify mapreduce Kafka Spark MongoDB
