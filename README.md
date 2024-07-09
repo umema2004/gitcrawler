@@ -2,11 +2,15 @@
 This project is a Flask web application that matches skills listed in a resume with skills and languages used in a user's GitHub repositories. The application uses the GitHub API to fetch repository details and matches these with keywords extracted from a user's resume.
 
 ## Features
-### Resume Upload: Upload a resume in plain text format.
-### GitHub Integration: Fetch user repositories, languages used, and README content from GitHub.
-### Skill Matching: Match skills from the resume with languages and keywords in repository README files.
-### CSV Report: Generate and download a CSV report of matched skills and repository details.
-### Flash Messages: Display feedback messages for successful uploads, downloads, and errors.
+Resume Upload: Upload a resume in plain text format.
+
+GitHub Integration: Fetch user repositories, languages used, and README content from GitHub.
+
+Skill Matching: Match skills from the resume with languages and keywords in repository README files.
+
+CSV Report: Generate and download a CSV report of matched skills and repository details.
+
+Flash Messages: Display feedback messages for successful uploads, downloads, and errors.
 
 ## Prerequisites
 Python 3.x
