@@ -1,52 +1,27 @@
-# GIT-CRAWLER: GitHub Repository Analyzer
-
-This script analyzes a GitHub user's repositories to find matches with skills, languages, project names, libraries, frameworks, and other items listed in a provided CV text file. It searches through the repository languages and README files to identify relevant matches.
+# GitCrawler: GitHub Repository and Resume Matcher
+This project is a Flask web application that matches skills listed in a resume with skills and languages used in a user's GitHub repositories. The application uses the GitHub API to fetch repository details and matches these with keywords extracted from a user's resume.
 
 ## Features
-
-- Fetches user repositories from GitHub.
-- Extracts languages used in each repository.
-- Analyzes README files for each repository.
-- Identifies important words from a provided CV text file.
-- Finds matches between CV items and repository details (languages and README content).
-- Outputs a summary of matched items and repository details.
+### Resume Upload: Upload a resume in plain text format.
+### GitHub Integration: Fetch user repositories, languages used, and README content from GitHub.
+### Skill Matching: Match skills from the resume with languages and keywords in repository README files.
+### CSV Report: Generate and download a CSV report of matched skills and repository details.
+### Flash Messages: Display feedback messages for successful uploads, downloads, and errors.
 
 ## Prerequisites
+Python 3.x
 
-- Python 3.x
-- `requests` library
-- `nltk` library
-- GitHub Personal Access Token
+Flask
 
-## Installation
+NLTK (Natural Language Toolkit)
 
-1. Clone the repository:
+Bootstrap (for front-end styling)
 
-```bash
-git clone https://github.com/umema2004/gitcrawler.git
-cd gitcrawler
-```
-
-2. Install the required libraries:
-```bash
-pip install requests nltk
-```
-3. Download NLTK data:
-```bash
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-```
 ## Usage
-
-Run the script
-```bash
-python git-crawler.py
-```
-Run for given example file 'resume.txt'
-
-## Example
-```bash
-Enter the GitHub username: umema2004
-Enter the path to the CV text file: resume.txt
-```
+1. Run app.py
+2. Open your web browser and go to http://127.0.0.1:5000/.
+3. Enter your GitHub username and personal access token.
+4. Upload your resume in plain text format.
+5. Click on the "Upload" button.
+6. After processing, view the results on the results page.
+7. Download the generated CSV report if needed.
