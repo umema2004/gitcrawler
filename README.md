@@ -25,26 +25,28 @@ This script analyzes a GitHub user's repositories to find matches with skills, l
 ```bash
 git clone https://github.com/umema2004/gitcrawler.git
 cd gitcrawler
+```
 
 2. Install the required libraries:
-
+```bash
 pip install requests nltk
-
+```
 3. Download NLTK data:
-
+```bash
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
-
+```
 ## Usage
 
 Run the script
-
+```bash
 python git-crawler.py
-
+```
 Run for given example file 'resume.txt'
 
 ## Example
-
+```bash
 Enter the GitHub username: umema2004
 Enter the path to the CV text file: resume.txt
+```
