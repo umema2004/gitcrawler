@@ -1,9 +1,9 @@
 import requests
-import re
 from collections import defaultdict
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import string
+import csv
 
 # Fetch User Repositories
 def get_user_repositories(username, token):
@@ -65,8 +65,9 @@ def extract_important_words(text):
 # Main function
 def main():
     username = input("Enter the GitHub username: ")
-    token = "YOUR API KEY"
+    token = "YOUR API KEY"                                             #REPLACE WITH YOUR OWN API KEY
     file_path = input("Enter the path to the CV text file: ")
+    output_file = username+".csv"
     
     # Read the CV text file and extract important words
     with open(file_path, 'r') as file:
@@ -100,6 +101,21 @@ def main():
         for repo_name, repo_languages in repo_details:
             print(f"- {repo_name}: {', '.join(repo_languages)}")
         print(f"\nMatched Items from CV in README and Languages: {', '.join(all_items_found)}")
+        
+        # Write results to CSV file
+        with open(output_file, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Username", username])
+            writer.writerow(["Number of repositories", len(repos)])
+            writer.writerow(["\n"])
+            writer.writerow(["Repository", "Languages"])
+            for repo_name, repo_languages in repo_details:
+                writer.writerow([repo_name, ', '.join(repo_languages)])
+            writer.writerow(["\n"])
+            writer.writerow(["Matched Items from CV in README and Languages"])
+            writer.writerow([', '.join(all_items_found)])
+        
+        print(f"\nResults have been written to {output_file}")
     
     except requests.exceptions.RequestException as e:
         print(f"Error fetching data from GitHub API: {e}")
@@ -110,3 +126,4 @@ if __name__ == "__main__":
     nltk.download('punkt')
     nltk.download('stopwords')
     main()
+
