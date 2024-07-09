@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Results</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showDownloadMessage() {
+      var messageContainer = document.getElementById('flash-messages');
+      var message = document.createElement('div');
+      message.className = 'alert alert-success alert-dismissible fade show';
+      message.role = 'alert';
+      message.innerHTML = 'Download successful! <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+      messageContainer.appendChild(message);
+    }
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <div id="flash-messages"></div>
+    <h1 class="mb-4">Results for {{ username }}</h1>
+
+    <h2 class="mb-3">Repositories and their Languages</h2>
+    {% if repos %}
+      <ul class="list-group mb-4">
+        {% for repo, languages in repos %}
+          <li class="list-group-item">
+            <strong>{{ repo }}:</strong> {{ ', '.join(languages) }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No repositories found for the user.</p>
+    {% endif %}
+
+    <h2 class="mb-3">Skills Found in Each Repository</h2>
+    {% if skills %}
+      <ul class="list-group mb-4">
+        {% for repo, skills_set in skills %}
+          <li class="list-group-item">
+            <strong>{{ repo }}:</strong> {{ ', '.join(skills_set) }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No skills matched from the resume.</p>
+    {% endif %}
+
+    <h2 class="mb-3">CSV File</h2>
+    {% if output_file %}
+      <p><a href="{{ output_file }}" class="btn btn-primary" onclick="showDownloadMessage()">Download CSV</a></p>
+    {% else %}
+      <p>No CSV file generated.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
