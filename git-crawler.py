@@ -2,7 +2,6 @@ import requests
 from collections import defaultdict
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-import string
 import csv
 
 # Fetch User Repositories
@@ -31,14 +30,6 @@ def get_repo_readme(repo_full_name, token):
     else:
         return ""
 
-# Compile a List of Languages
-def aggregate_languages(repos_languages):
-    language_count = defaultdict(int)
-    for repo_languages in repos_languages:
-        for language, lines in repo_languages.items():
-            language_count[language] += lines
-    return language_count
-
 # Find items in README content
 def find_items_in_readme(readme_content, items_list):
     found_items = set()
@@ -65,9 +56,9 @@ def extract_important_words(text):
 # Main function
 def main():
     username = input("Enter the GitHub username: ")
-    token = "YOUR API KEY"                                             #REPLACE WITH YOUR OWN API KEY
+    token = "YOUR API KEY"         #REPLACE WITH YOUR API KEY HERE
     file_path = input("Enter the path to the CV text file: ")
-    output_file = username+".csv"
+    output_file = username + ".csv"
     
     # Read the CV text file and extract important words
     with open(file_path, 'r') as file:
@@ -82,6 +73,8 @@ def main():
         languages = []
         repo_details = []
         all_items_found = set()
+        repo_skills = []
+        
         for repo in repos:
             repo_languages = get_repo_languages(repo['full_name'], token)
             languages.append(repo_languages)
@@ -89,10 +82,11 @@ def main():
             
             readme_content = get_repo_readme(repo['full_name'], token)
             items_found_in_readme = find_items_in_readme(readme_content, items_from_cv)
-            all_items_found.update(items_found_in_readme)
-            
             items_found_in_languages = find_items_in_languages(repo_languages, items_from_cv)
-            all_items_found.update(items_found_in_languages)
+            
+            items_found = items_found_in_readme.union(items_found_in_languages)
+            repo_skills.append((repo['name'], items_found))
+            all_items_found.update(items_found)
         
         # Output results
         print(f"\nUsername: {username}")
@@ -101,6 +95,10 @@ def main():
         for repo_name, repo_languages in repo_details:
             print(f"- {repo_name}: {', '.join(repo_languages)}")
         print(f"\nMatched Items from CV in README and Languages: {', '.join(all_items_found)}")
+        
+        print("\nSkills found in each repository:")
+        for repo_name, skills in repo_skills:
+            print(f"- {repo_name}: {', '.join(skills)}")
         
         # Write results to CSV file
         with open(output_file, mode='w', newline='') as file:
@@ -114,6 +112,11 @@ def main():
             writer.writerow(["\n"])
             writer.writerow(["Matched Items from CV in README and Languages"])
             writer.writerow([', '.join(all_items_found)])
+            writer.writerow(["\n"])
+            writer.writerow(["Skills found in each repository"])
+            writer.writerow(["Repository", "Skills"])
+            for repo_name, skills in repo_skills:
+                writer.writerow([repo_name, ', '.join(skills)])
         
         print(f"\nResults have been written to {output_file}")
     
@@ -126,4 +129,3 @@ if __name__ == "__main__":
     nltk.download('punkt')
     nltk.download('stopwords')
     main()
-
