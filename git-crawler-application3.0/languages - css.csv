@@ -1,0 +1,8 @@
+skill,beginner,inter,advanced
+selectors,"element,class,id","attribute,pseudo-class,descendant","pseudo-element,nth-child,not"
+boxmodel,"width,height,padding,border","margin,box-sizing,outline","box-shadow,border-radius"
+typography,"font-family,font-size,color","font-weight,line-height,text-align","text-shadow,font-variant"
+background,"background-color,background-image","background-repeat,background-position","background-clip,background-blend-mode"
+flexbox,"flex,flex-direction,gap","justify-content,align-items,flex-wrap","align-content,flex-grow,flex-shrink"
+grid,"grid,grid-template-columns","grid-template-rows,grid-gap,grid-area","grid-template-areas,grid-auto-flow"
+animations,"transition,transform","@keyframes,animation-duration,animation-timing-function","animation-delay,animation-iteration-count"
