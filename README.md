@@ -2,6 +2,9 @@
 
 This project is a web application that predicts skills and skill levels based on a user's GitHub repositories and uploaded resume. It uses machine learning models to analyze the source code in the repositories and the text in the resume to generate predictions. The results are presented to the user along with an option to download a CSV file containing the predicted skills and their levels.
 
+![image](https://github.com/user-attachments/assets/db2a4a49-4e83-48ba-98f5-094cd5fb54ac)
+
+
 ## Features
 
 - Upload a resume in PDF, DOC, or DOCX format.
