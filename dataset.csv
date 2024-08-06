@@ -1,0 +1,77 @@
+Source Code,Skill Level,Skill
+"def add(a, b): return a + b",Beginner,Arithmetic
+"for i in range(10): print(i)",Beginner,Loops
+"class MyClass: pass",Intermediate,Classes
+"def factorial(n): return 1 if n==0 else n*factorial(n-1)",Intermediate,Recursion
+"import numpy as np; np.array([1,2,3])",Expert,Numpy
+"def merge_sort(arr): if len(arr) > 1: mid = len(arr)//2 left_half = arr[:mid] right_half = arr[mid:] merge_sort(left_half) merge_sort(right_half) i = j = k = 0 while i < len(left_half) and j < len(right_half): if left_half[i] < right_half[j]: arr[k] = left_half[i] i += 1 else: arr[k] = right_half[j] j += 1 k += 1 while i < len(left_half): arr[k] = left_half[i] i += 1 k += 1 while j < len(right_half): arr[k] = right_half[j] j += 1 k += 1",Expert,Sorting
+"def fibonacci(n): if n <= 1: return n return fibonacci(n-1) + fibonacci(n-2)",Intermediate,Recursion
+"import pandas as pd; df = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})",Intermediate,Pandas
+"def quicksort(arr): if len(arr) <= 1: return arr pivot = arr[len(arr) // 2] left = [x for x in arr if x < pivot] middle = [x for x in arr if x == pivot] right = [x for x in arr if x > pivot] return quicksort(left) + middle + quicksort(right)",Expert,Sorting
+"def reverse_string(s): return s[::-1]",Beginner,Strings
+"import matplotlib.pyplot as plt; plt.plot([1, 2, 3], [4, 5, 6]); plt.show()",Expert,Matplotlib
+"def is_prime(n): if n <= 1: return False for i in range(2, int(n**0.5) + 1): if n % i == 0: return False return True",Intermediate,Algorithms
+"def binary_search(arr, target): left, right = 0, len(arr) - 1 while left <= right: mid = (left + right) // 2 if arr[mid] == target: return mid elif arr[mid] < target: left = mid + 1 else: right = mid - 1 return -1",Intermediate,Algorithms
+"import tensorflow as tf; model = tf.keras.models.Sequential([tf.keras.layers.Dense(10, activation='relu', input_shape=(784,)), tf.keras.layers.Dense(10, activation='softmax')])",Expert,TensorFlow
+"def print_even_numbers(n): for i in range(n): if i % 2 == 0: print(i)",Beginner,Loops
+"import sklearn as sk; from sklearn.ensemble import RandomForestClassifier",Expert,Scikit-Learn
+"import flask; app = flask.Flask(__name__); @app.route('/') def home(): return 'Hello World!'",Intermediate,Flask
+"import django; django.setup(); from django.db import models; class MyModel(models.Model): name = models.CharField(max_length=100)",Expert,Django
+"import seaborn as sns; sns.scatterplot(x=[1,2,3], y=[4,5,6])",Expert,Seaborn
+"import requests; response = requests.get('https://api.example.com')",Intermediate,Requests
+"def bubble_sort(arr): n = len(arr) for i in range(n): for j in range(0, n-i-1): if arr[j] > arr[j+1]: arr[j], arr[j+1] = arr[j+1], arr[j]",Intermediate,Sorting
+"def palindrome(s): return s == s[::-1]",Beginner,Strings
+"def gcd(a, b): while b: a, b = b, a % b return a",Intermediate,Algorithms
+"import re; pattern = r'\\b[a-zA-Z]+\\b'; re.findall(pattern, 'Hello, World!')",Intermediate,Regex
+"import sqlite3; conn = sqlite3.connect(':memory:'); c = conn.cursor(); c.execute('CREATE TABLE test (id INT, name TEXT)')",Intermediate,SQLite
+"from collections import Counter; Counter('hello world')",Intermediate,Collections
+"import os; os.listdir('.')",Intermediate,OS
+"def knapsack(weights, values, W): n = len(weights) dp = [[0 for _ in range(W+1)] for _ in range(n+1)] for i in range(n+1): for w in range(W+1): if i == 0 or w == 0: dp[i][w] = 0 elif weights[i-1] <= w: dp[i][w] = max(values[i-1] + dp[i-1][w-weights[i-1]], dp[i-1][w]) else: dp[i][w] = dp[i-1][w] return dp[n][W]",Expert,Dynamic Programming
+"from itertools import permutations; list(permutations([1,2,3]))",Intermediate,Itertools
+"def decorator_function(original_function): def wrapper_function(*args, **kwargs): print('Wrapper executed this before {}'.format(original_function.__name__)) return original_function(*args, **kwargs) return wrapper_function",Intermediate,Decorators
+"import json; json_data = json.dumps({'key': 'value'})",Beginner,JSON
+"import time; time.sleep(1)",Beginner,Time
+"from PIL import Image; img = Image.open('path/to/image.jpg')",Intermediate,PIL
+"def anagram(s1, s2): return sorted(s1) == sorted(s2)",Beginner,Strings
+"from functools import reduce; reduce(lambda x, y: x + y, [1, 2, 3, 4, 5])",Intermediate,Functools
+"import socket; s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",Expert,Socket
+"import threading; t = threading.Thread(target=lambda: print('Hello'))",Intermediate,Threading
+"def dijkstra(graph, start): import heapq queue, seen = [(0, start, ())], set() while queue: (cost, v1, path) = heapq.heappop(queue) if v1 not in seen: seen.add(v1) path = (v1, path) if v1 == start: return (cost, path) for c, v2 in graph.get(v1, ()): if v2 not in seen: heapq.heappush(queue, (cost+c, v2, path))",Expert,Graph Algorithms
+"def linear_regression(X, y): import numpy as np X = np.insert(X, 0, 1, axis=1) theta = np.linalg.inv(X.T @ X) @ X.T @ y return theta",Expert,Machine Learning
+"import psycopg2; conn = psycopg2.connect('dbname=test user=postgres password=secret')",Intermediate,PostgreSQL
+"import geopandas as gpd; gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))",Expert,Geopandas
+"from sklearn.linear_model import LinearRegression; model = LinearRegression().fit(X, y)",Intermediate,Scikit-Learn
+"import tensorflow as tf; tf.data.Dataset.from_tensor_slices([1, 2, 3, 4, 5])",Expert,TensorFlow
+"from flask import Flask, request; app = Flask(__name__); @app.route('/json', methods=['POST']) def json_example(): data = request.get_json(); return data",Intermediate,Flask
+"from django.http import HttpResponse; def index(request): return HttpResponse('Hello, world!')",Intermediate,Django
+"import scipy.stats as stats; stats.ttest_ind([1, 2, 3], [4, 5, 6])",Intermediate,Scipy
+"import h5py; f = h5py.File('data.h5', 'r')",Intermediate,HDF5
+"import gym; env = gym.make('CartPole-v1')",Expert,OpenAI Gym
+"from sympy import symbols, Eq, solve; x = symbols('x'); eq = Eq(x**2 - 1, 0); solve(eq, x)",Intermediate,Sympy
+"import cv2; img = cv2.imread('path/to/image.jpg')",Expert,OpenCV
+"import torch; torch.tensor([1, 2, 3])",Expert,Pytorch
+"def http_get(url): import requests response = requests.get(url) return response.text",Beginner,HTTP Requests
+"from urllib.parse import urlparse; result = urlparse('http://www.example.com')",Intermediate,URL Parsing
+"import boto3; s3 = boto3.client('s3'); s3.list_buckets()",Expert,Boto3
+"import xml.etree.ElementTree as ET; tree = ET.parse('data.xml')",Intermediate,XML Parsing
+"import lxml.etree as etree; root = etree.Element('root')",Expert,LXML
+"def svm_classifier(X, y): from sklearn import svm model = svm.SVC() model.fit(X, y) return model",Intermediate,Machine Learning
+"import nltk; nltk.download('punkt')",Intermediate,Natural Language Processing
+"import scrapy; class MySpider(scrapy.Spider): name = 'myspider' start_urls = ['http://example.com']",Expert,Scrapy
+"def levenshtein_distance(s1, s2): if len(s1) < len(s2): return levenshtein_distance(s2, s1) if len(s2) == 0: return len(s1) previous_row = range(len(s2) + 1) for i, c1 in enumerate(s1): current_row = [i + 1] for j, c2 in enumerate(s2): insertions = previous_row[j + 1] + 1 deletions = current_row[j] + 1 substitutions = previous_row[j] + (c1 != c2) current_row.append(min(insertions, deletions, substitutions)) previous_row = current_row return previous_row[-1]",Expert,Algorithms
+"import sqlalchemy as db; engine = db.create_engine('sqlite:///test.db')",Intermediate,SQLAlchemy
+"from pyspark import SparkContext; sc = SparkContext('local', 'app')",Expert,Pyspark
+"import tensorflow as tf; from tensorflow.keras.layers import Dense, Input; inputs = Input(shape=(784,)); x = Dense(64, activation='relu')(inputs); x = Dense(64, activation='relu')(x); outputs = Dense(10, activation='softmax')(x); model = Model(inputs=inputs, outputs=outputs); model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])",Expert,TensorFlow
+"import torch; import torch.nn as nn; import torch.optim as optim; class SimpleNN(nn.Module): def __init__(self): super(SimpleNN, self).__init__(); self.fc1 = nn.Linear(784, 64); self.fc2 = nn.Linear(64, 64); self.fc3 = nn.Linear(64, 10); self.relu = nn.ReLU(); self.softmax = nn.Softmax(dim=1); def forward(self, x): x = self.relu(self.fc1(x)); x = self.relu(self.fc2(x)); x = self.fc3(x); return self.softmax(x); model = SimpleNN(); criterion = nn.CrossEntropyLoss(); optimizer = optim.Adam(model.parameters(), lr=0.001)",Expert,PyTorch
+"from sklearn.datasets import load_iris; from sklearn.model_selection import train_test_split; from sklearn.ensemble import RandomForestClassifier; from sklearn.metrics import accuracy_score; iris = load_iris(); X, y = iris.data, iris.target; X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42); clf = RandomForestClassifier(n_estimators=100); clf.fit(X_train, y_train); y_pred = clf.predict(X_test); accuracy = accuracy_score(y_test, y_pred); print(f'Accuracy: {accuracy:.2f}')",Intermediate,Scikit-learn
+"from flask import Flask, request, jsonify; app = Flask(__name__); @app.route('/predict', methods=['POST']) def predict(): data = request.get_json(); prediction = {'result': 'dummy prediction'}; return jsonify(prediction); if __name__ == '__main__': app.run(debug=True)",Intermediate,Flask
+"start-dfs.sh; start-yarn.sh; hdfs dfs -mkdir /user/myuser; hdfs dfs -put localfile.txt /user/myuser/; hdfs dfs -ls /user/myuser/",Expert,Apache Hadoop
+"bin/zookeeper-server-start.sh config/zookeeper.properties; bin/kafka-server-start.sh config/server.properties; bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1; bin/kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092; bin/kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server localhost:9092",Expert,Kafka
+"from pyspark.sql import SparkSession; spark = SparkSession.builder.appName('example').getOrCreate(); df = spark.read.csv('data.csv', header=True, inferSchema=True); df.show()",Expert,Apache Spark
+"from transformers import GPT2LMHeadModel, GPT2Tokenizer; tokenizer = GPT2Tokenizer.from_pretrained('gpt2'); model = GPT2LMHeadModel.from_pretrained('gpt2'); input_text = 'Once upon a time'; input_ids = tokenizer.encode(input_text, return_tensors='pt'); output = model.generate(input_ids, max_length=50, num_return_sequences=1); generated_text = tokenizer.decode(output[0], skip_special_tokens=True); print(generated_text)",Expert,GenAI
+"import requests; from bs4 import BeautifulSoup; url = 'https://example.com'; response = requests.get(url); soup = BeautifulSoup(response.text, 'html.parser'); title = soup.title.string; print(title)",Intermediate,Web scraping
+"PowerBI does not have direct code snippets; use PowerBI REST API or Power Query (M) language for interaction.",Intermediate,PowerBI
+"from pymongo import MongoClient; client = MongoClient('mongodb://localhost:27017/'); db = client['test_database']; collection = db['test_collection']",Intermediate,MongoDB
+"import mysql.connector; conn = mysql.connector.connect(user='user', password='password', host='127.0.0.1', database='test'); cursor = conn.cursor(); cursor.execute('SELECT * FROM table'); results = cursor.fetchall(); for row in results: print(row)",Intermediate,MySQL
+"git clone https://github.com/username/repository.git; cd repository; git add .; git commit -m 'Initial commit'; git push origin main",Intermediate,GitHub
+"import azure.storage.blob; from azure.storage.blob import BlobServiceClient; blob_service_client = BlobServiceClient(account_url='https://<your_account_name>.blob.core.windows.net', credential='<your_account_key>'); container_client = blob_service_client.get_container_client('mycontainer'); container_client.create_container(); blob_client = container_client.get_blob_client('myfile.txt'); blob_client.upload_blob('Hello, World!')",Intermediate,Microsoft Azure
