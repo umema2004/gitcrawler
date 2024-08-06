@@ -1,8 +1,0 @@
-skill,beginner,inter,advanced
-Variables,"var, let, const","scope, hoisting","closures, modules"
-Functions,"function declaration, function expression","callback functions, IIFE","higher-order functions, currying"
-Controlflow,"if, else, switch","for, while, do-while","try-catch, error handling"
-DOM Manipulation,"getElementById, querySelector","createElement, appendChild","virtual DOM, frameworks (React, Vue)"
-Events,"addEventListener, onclick","event delegation, event propagation","custom events, event bubbling"
-APIs,"fetch, XMLHttpRequest","Promise, async/await","Service Workers, WebSockets"
-ES6+ Features,"let, const, arrow functions","destructuring, template literals","Generators, async iterators"
