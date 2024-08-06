@@ -33,7 +33,7 @@ joblib.dump(skill_level_model, 'skill_level_classifier2.pkl')
 
 # Fetch Python files from GitHub user repositories
 username = 'umema2004'  # replace with the GitHub username
-token = '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'  # replace with your GitHub token
+token = 'YOUR GITHUB TOKEN'  # replace with your GitHub token
 python_files = fetch_python_files(username, token)
 
 # Process the Python files to predict skills and skill levels
