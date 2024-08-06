@@ -75,3 +75,19 @@ Source Code,Skill Level,Skill
 "import mysql.connector; conn = mysql.connector.connect(user='user', password='password', host='127.0.0.1', database='test'); cursor = conn.cursor(); cursor.execute('SELECT * FROM table'); results = cursor.fetchall(); for row in results: print(row)",Intermediate,MySQL
 "git clone https://github.com/username/repository.git; cd repository; git add .; git commit -m 'Initial commit'; git push origin main",Intermediate,GitHub
 "import azure.storage.blob; from azure.storage.blob import BlobServiceClient; blob_service_client = BlobServiceClient(account_url='https://<your_account_name>.blob.core.windows.net', credential='<your_account_key>'); container_client = blob_service_client.get_container_client('mycontainer'); container_client.create_container(); blob_client = container_client.get_blob_client('myfile.txt'); blob_client.upload_blob('Hello, World!')",Intermediate,Microsoft Azure
+"from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X, y)",Intermediate,Scikit-Learn
+"from flask import Flask\napp = Flask(__name__)\n@app.route('/')\ndef home(): return 'Hello, Flask!'",Intermediate,Flask
+"import torch\nx = torch.tensor([1.0, 2.0, 3.0])\ny = torch.tensor([4.0, 5.0, 6.0])\nz = x + y",Intermediate,PyTorch
+"import numpy as np\narray = np.array([1, 2, 3])\nprint(np.mean(array))",Beginner,Numpy
+"import pandas as pd\ndata = {'col1': [1, 2], 'col2': [3, 4]}\ndf = pd.DataFrame(data)\nprint(df)",Beginner,Pandas
+"from pyspark.sql import SparkSession\nspark = SparkSession.builder.appName('example').getOrCreate()",Intermediate,Spark
+"from pymongo import MongoClient\nclient = MongoClient('localhost', 27017)\ndb = client['mydatabase']",Beginner,MongoDB
+"from hdfs import InsecureClient\nclient = InsecureClient('http://localhost:50070')\nwith client.write('/path/to/file.txt') as writer: writer.write('Hello, Hadoop!')",Intermediate,Hadoop
+"from sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nscaled_data = scaler.fit_transform(data)",Intermediate,Scikit-Learn
+"import torch.nn as nn\nclass SimpleNN(nn.Module):\n def __init__(self):\n  super(SimpleNN, self).__init__()\n  self.fc = nn.Linear(10, 1)\n def forward(self, x):\n  return self.fc(x)",Advanced,PyTorch
+"import numpy as np\nmatrix = np.random.rand(3, 3)\nprint(np.linalg.inv(matrix))",Intermediate,Numpy
+"import pandas as pd\ndf = pd.read_csv('data.csv')\ngrouped = df.groupby('column_name').sum()\nprint(grouped)",Intermediate,Pandas
+"from flask import Flask, request\napp = Flask(__name__)\n@app.route('/data', methods=['POST'])\ndef data():\n data = request.json\n return 'Received'",Advanced,Flask
+"from pyspark import SparkContext\nsc = SparkContext('local', 'example')\ntextFile = sc.textFile('hdfs://...')\nwordCounts = textFile.flatMap(lambda line: line.split()).countByValue()",Advanced,Spark
+"from pymongo import MongoClient\nclient = MongoClient('localhost', 27017)\ndb = client['mydatabase']\ncollection = db['mycollection']\ncollection.insert_one({'name': 'test', 'value': 123})",Intermediate,MongoDB
+"from hdfs import InsecureClient\nclient = InsecureClient('http://localhost:50070')\nclient.download('/path/to/file.txt', 'localfile.txt')",Beginner,Hadoop
