@@ -11,7 +11,7 @@ from resume_utils import parse_resume, read_skills_from_csv  # Import resume par
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['CSV_FOLDER'] = 'csv_outputs'
-app.config['GITHUB_TOKEN'] = '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'  # Add your GitHub token here
+app.config['GITHUB_TOKEN'] = 'YOUR GITHUB TOKEN'  # Add your GitHub token here
 
 # Load the trained models
 skill_model = joblib.load('skill_classifier.pkl')
